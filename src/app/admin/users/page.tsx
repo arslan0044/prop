@@ -122,7 +122,7 @@ const UserList: React.FC<UserListProps> = ({ users, setUsers }) => {
         <Image
           width={200}
           height={240}
-          src="/load.gif"
+          src="/assets/load.gif"
           alt="Loader..."
           className="load-img"
         />
@@ -135,9 +135,9 @@ const UserList: React.FC<UserListProps> = ({ users, setUsers }) => {
       <h1 className="text-6xl mb-4 font-bold text-gray-800 text-center">
         User List
       </h1>
-      <table className="w-[95%] text-center table-data m-auto">
+      <table className="w-[95%] text-center  m-auto">
         <thead>
-          <tr>
+          <tr className="bg">
             <th className="py-2 px-4 text-2xl font-bold text-white">ID</th>
             <th className="py-2 px-4 text-2xl font-bold text-white">Name</th>
             <th className="py-2 px-4 text-2xl font-bold text-white">
@@ -166,15 +166,15 @@ const UserList: React.FC<UserListProps> = ({ users, setUsers }) => {
 
 const UserRow: React.FC<{ user: User; onDelete: (id: string) => void }> =
   React.memo(({ user, onDelete }) => (
-    <tr>
-      <td className="px-4 py-2 text-xl font-medium">{user.id}</td>
-      <td className="px-4 py-2 text-xl font-medium">{user.name}</td>
-      <td className="px-4 py-2 text-xl font-medium">{user.username}</td>
-      <td className="px-4 py-2 text-xl font-medium">{user.email}</td>
-      <td className="px-4 py-2 text-xl font-medium">
+    <tr className="  border-b border-gray-500">
+      <td className="px-4 py-6 text-2xl font-medium">{user.id}</td>
+      <td className="px-4 py-6 text-2xl font-medium">{user.name}</td>
+      <td className="px-4 py-6 text-2xl font-medium">{user.username}</td>
+      <td className="px-4 py-6 text-2xl font-medium">{user.email}</td>
+      <td className="px-4 py-6 text-2xl font-medium">
         {user.isAdmin ? "Yes" : "No"}
       </td>
-      <td className="px-4 py-2 text-xl font-medium">
+      <td className="px-4 py-2 text-2xl font-medium">
         <Link href={`/admin/users/${user.id}`}>
           <button className="text-blue-500 hover:text-blue-700 mr-2">
             <FaUserEdit className="w-8 h-8 shadow-md cursor-pointer" />
@@ -211,9 +211,13 @@ function User() {
       <div className="flex justify-center py-4 mb-9">
         <button
           onClick={toggleRegisterForm}
-          className="py-3 px-9 mt-64 rounded-lg shadow-lg bg-black text-white text-2xl font-bold  hover:bg-gray-900"
+          className={` ${
+            showRegisterForm
+              ? "button-primary "
+              : " admin-link secondary-button"
+          }  `}
         >
-          {showRegisterForm ? "Hide Register Form" : "Show Register Form"}
+          {showRegisterForm ? "Hide Register Form" : " Register New User"}
         </button>
       </div>
       {showRegisterForm && <RegisterForm onRegister={handleNewUser} />}

@@ -264,7 +264,7 @@ form {
 }
 
 .table-data {
-  border: 1px solid transparent;
+  /* border: 1px solid transparent; */
   background: linear-gradient(var(--bg-color), var(--bg-color)),
     var(--secondary-gradient);
   background-clip: padding-box, border-box;
@@ -272,21 +272,23 @@ form {
 }
 
 .table-data thead {
-  border: 1px solid transparent;
+  /* border: 1px solid transparent; */
   background: var(--primary-gradient);
 }
 
 .table-data th {
-  border: 1px solid transparent;
+  /* border: 1px solid transparent; */
   background: var(--primary-gradient);
 }
-
+.bg{
+  background: var(--primary-gradient);
+}
 ul li a {
   transition: all 0.5s;
 }
 
 .table-data td {
-  border: 1px solid transparent;
+  /* border: 1px solid transparent; */
   background: linear-gradient(var(--bg-color), var(--bg-color)),
     var(--secondary-gradient);
   background-clip: padding-box, border-box;
@@ -294,7 +296,7 @@ ul li a {
 }
 
 .table-data tr {
-  border: 1px solid transparent;
+  /* border: 1px solid transparent; */
   background: linear-gradient(var(--bg-color), var(--bg-color)),
     var(--secondary-gradient);
   background-clip: padding-box, border-box;
